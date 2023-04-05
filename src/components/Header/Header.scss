@@ -64,9 +64,9 @@
         height: 50px;
         margin-bottom: 8px;
         background: url(../../assets/icons/svg/Icon-search.svg) no-repeat scroll 7px 15px;
-        background-color: $alabaster;
+        background-color: $sitesecondaryalabaster;
         padding-left: 35px;
-        border: 1px solid $mercury;
+        border: 1px solid sitesecondarymercury;
         border-radius: 5px;
 
         @include tablet {
