@@ -1,7 +1,7 @@
 import React from "react";
-// import logo from "../../assets/logo/logo-brainflix";
-// import profilePicture from "../../assets/images/logo/Mohan-muruge.jpg";
-// import "./Header.scss";
+import logo from "../../assets/Images/logo/BrainFlix-logo.svg";
+import profilePicture from "../../assets/Images/Mohan-muruge.jpg";
+import "./Header.scss";
 
 const Header = () => (
   <header className="header">
@@ -16,7 +16,7 @@ const Header = () => (
 
 const Brand = () => (
   <div className="header__image">
-    <img src="" alt="Brand-Logo" className="header__logo" />
+    <img src={logo} alt="Brand-Logo" className="header__logo" />
   </div>
 );
 
@@ -36,7 +36,7 @@ const UploadButton = () => (
 
 const ProfilePicture = () => (
   <img
-    src=""
+    src={profilePicture}
     alt="Profile-Picture"
     className="header__profile-picture"
   />
