@@ -1,6 +1,7 @@
 import React from "react";
 import logo from "../../assets/Images/logo/BrainFlix-logo.svg";
 import profilePicture from "../../assets/Images/Mohan-muruge.jpg";
+import uploadSVG from "../../assets/Images/Icons/upload.svg";
 import "./Header.scss";
 
 const Header = () => (
@@ -31,7 +32,10 @@ const Search = () => (
 );
 
 const UploadButton = () => (
-  <button className="header__button button">+ UPLOAD</button>
+  <button className="header__button button">
+    <img src={uploadSVG} alt="upload-icon" className="header__upload-icon" />
+    UPLOAD
+  </button>
 );
 
 const ProfilePicture = () => (
