@@ -26,7 +26,7 @@ function Main() {
   );
 
   return (
-    <div className="Main">
+    <div className="Core">
       <MainVideo selectedVideo={selectedVideo} />
       <VideoDetails selectedVideo={selectedVideo} />
       <NextVideos filteredVideos={filteredVideos} clickHandler={videoClick} />
