@@ -17,6 +17,7 @@
 
     &__thumbnail {
         width: 7.5rem;
+        min-width: 7.5rem;
         max-height: 4.375rem;
         object-fit: cover;
         border-radius: .3125rem;
