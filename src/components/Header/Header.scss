@@ -82,7 +82,7 @@
     &__button {
         @include button;
         width: 70%;
-        margin-right: 20px;
+        margin-right: 1.25rem;
         font-size: 1.2rem;
         height: 80%;
         display: flex;
@@ -91,7 +91,7 @@
 
         @include tablet {
             width: 60%;
-            height: 50px;
+            height: 3.125rem;
         }
     }
 
@@ -107,13 +107,13 @@
     }
 
     &__profile-picture {
-        width: 50px;
-        height: 50px;
+        width: 3.125rem;
+        height: 3.125rem;
         border-radius: 100%;
 
         @include tablet {
-            width: 50px;
-            height: 50px;
+            width: 3.125rem;
+            height: 3.125rem;
         }
     }
 }
