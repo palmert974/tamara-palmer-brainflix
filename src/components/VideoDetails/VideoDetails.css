@@ -1,0 +1,344 @@
+@font-face {
+  font-family: "Avenir Regular";
+  src: url("../../assets/Font/AvenirNextLTPro-Regular.otf");
+}
+@font-face {
+  font-family: "Avenir Bold";
+  src: url("../../assets/Font/AvenirNextLTPro-Bold.otf");
+}
+.videoDetails {
+  margin: 20px 16px;
+}
+@media screen and (min-width: 768px) {
+  .videoDetails {
+    margin: 20px 20px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .videoDetails {
+    width: 50%;
+    display: inline-flex;
+    flex-direction: column;
+    margin: 0px 20px 0 100px;
+    border-right: 0.5px solid #E1E1E1;
+  }
+}
+.videoDetails__videoTitle {
+  font-family: "Avenir Bold", sans-serif;
+  font-size: 1.8rem;
+  line-height: 32px;
+  margin-bottom: 0;
+  font-size: 1.6rem;
+}
+@media screen and (min-width: 768px) {
+  .videoDetails__videoTitle {
+    font-size: 1.8rem;
+  }
+}
+.videoDetails__channel {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+@media screen and (min-width: 768px) {
+  .videoDetails__channel {
+    display: inline-flex;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .videoDetails__channel {
+    margin-bottom: 0;
+  }
+}
+.videoDetails__channel-author {
+  font-family: "Avenir Demi Bold", sans-serif;
+  font-size: 1.1rem;
+  line-height: 18px;
+  font-size: 1.2rem;
+  margin-right: 10px;
+}
+@media screen and (min-width: 1200px) {
+  .videoDetails__channel-author {
+    font-size: 0.8rem;
+  }
+}
+.videoDetails__channel-date {
+  font-family: "Avenir Regular", sans-serif;
+  font-size: 1rem;
+  color: #000000;
+  color: #AFAFAF;
+}
+@media screen and (min-width: 1200px) {
+  .videoDetails__channel-date {
+    font-size: 0.8rem;
+  }
+}
+.videoDetails__icons {
+  display: flex;
+  margin-bottom: 30px;
+}
+@media screen and (min-width: 768px) {
+  .videoDetails__icons {
+    display: inline-flex;
+    margin-left: 40%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .videoDetails__icons {
+    margin-left: 35%;
+    font-size: 0.8rem;
+    margin-bottom: 0px;
+  }
+}
+.videoDetails__icons span {
+  margin-right: 10px;
+  margin-left: 10px;
+  font-family: "Avenir Regular", sans-serif;
+  font-size: 1rem;
+  color: #000000;
+}
+@media screen and (min-width: 1200px) {
+  .videoDetails__icons span {
+    font-size: 0.8rem;
+  }
+}
+.videoDetails__divider {
+  border: 0.5px solid #E1E1E1;
+}
+@media screen and (min-width: 1200px) {
+  .videoDetails__divider {
+    width: 100%;
+  }
+}
+.videoDetails__summary {
+  font-family: "Avenir Regular", sans-serif;
+  font-size: 1rem;
+  color: #000000;
+  font-size: 0.9rem;
+  line-height: 22px;
+}
+@media screen and (min-width: 768px) {
+  .videoDetails__summary {
+    margin-top: 30px;
+    width: 70%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .videoDetails__summary {
+    margin-top: 10px;
+    font-size: 0.8rem;
+  }
+}
+.videoDetails__title-conversation {
+  font-family: "Avenir Demi Bold", sans-serif;
+  font-size: 1.2rem;
+  line-height: 22px;
+  margin-top: 30px;
+}
+@media screen and (min-width: 768px) {
+  .videoDetails__title-conversation {
+    margin-top: 50px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .videoDetails__title-conversation {
+    font-size: 1rem;
+  }
+}
+.videoDetails__joinConversation {
+  display: flex;
+  margin-bottom: 40px;
+}
+.videoDetails__joinConversation-row {
+  display: flex;
+  margin-top: 10px;
+}
+.videoDetails__joinConversation-heading {
+  font-family: "Avenir Demi Bold", sans-serif;
+  color: #AFAFAF;
+}
+@media screen and (min-width: 768px) {
+  .videoDetails__joinConversation-heading {
+    display: inline-block;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .videoDetails__joinConversation-heading {
+    font-size: 0.8rem;
+  }
+}
+.videoDetails__joinConversation-picture {
+  display: inline;
+  margin-top: 20px;
+  margin-right: 20px;
+}
+.videoDetails__joinConversation-profilePicture {
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+}
+.videoDetails__joinConversation-details {
+  margin: 0;
+  flex-grow: 1;
+}
+@media screen and (min-width: 768px) {
+  .videoDetails__joinConversation-details {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+}
+@media screen and (min-width: 768px) {
+  .videoDetails__joinConversation-details-title {
+    width: 100%;
+  }
+}
+@media screen and (min-width: 768px) {
+  .videoDetails__joinConversation-submit-button {
+    width: 140px;
+  }
+}
+.videoDetails__joinConversation-submit {
+  font-family: "Avenir Bold", sans-serif;
+  background-color: #0095FF;
+  border: none;
+  border-radius: 5px;
+  color: #FFFFFF;
+  height: 100%;
+  cursor: pointer;
+  transition: 1s;
+  width: 100%;
+  height: 50px;
+  font-size: 1rem;
+}
+.videoDetails__joinConversation-submit:hover {
+  background-color: #0065AD;
+}
+@media screen and (min-width: 768px) {
+  .videoDetails__joinConversation-submit {
+    font-size: 1rem;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .videoDetails__joinConversation-submit {
+    width: 90%;
+    height: 40px;
+    font-size: 0.8rem;
+  }
+}
+.videoDetails__joinConversation textarea {
+  font-family: "Avenir Regular", sans-serif;
+  background-color: #FAFAFA;
+  border: 2px solid #E1E1E1;
+  border-radius: 3px;
+  width: 100%;
+  line-height: 2em;
+  padding-left: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+@media screen and (min-width: 768px) {
+  .videoDetails__joinConversation textarea {
+    width: 70%;
+    margin-right: 30px;
+    height: 50px;
+    font-size: 1rem;
+    line-height: 40px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .videoDetails__joinConversation textarea {
+    font-size: 0.8rem;
+    margin-right: 16px;
+    height: 40px;
+    line-height: 33px;
+  }
+}
+.videoDetails__joinConversation-form {
+  width: 100%;
+}
+.videoDetails__comments {
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 32px;
+}
+.videoDetails__comments-card {
+  display: flex;
+  border-bottom: 1px solid #E1E1E1;
+}
+.videoDetails__comments-card:first-of-type {
+  border-top: 1px solid #E1E1E1;
+}
+.videoDetails__comments-profilePicture {
+  margin-top: 12px;
+  margin-right: 20px;
+}
+.videoDetails__comments-profilePicture img {
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  background-color: #E1E1E1;
+}
+@media screen and (min-width: 768px) {
+  .videoDetails__comments-profilePicture img {
+    width: 30px;
+    height: 30px;
+  }
+}
+.videoDetails__comments-details p {
+  display: inline-block;
+}
+.videoDetails__comments-details > p {
+  margin-top: 0;
+}
+.videoDetails__comments-nameAndDate {
+  font-family: "Avenir Regular", sans-serif;
+  font-size: 1rem;
+  color: #000000;
+  display: flex;
+  justify-content: space-between;
+}
+@media screen and (min-width: 768px) {
+  .videoDetails__comments-nameAndDate {
+    justify-content: flex-start;
+  }
+}
+.videoDetails__comments-nameAndDate-name {
+  font-family: "Avenir Demi Bold", sans-serif;
+  font-size: 0.9rem;
+}
+@media screen and (min-width: 768px) {
+  .videoDetails__comments-nameAndDate-name {
+    margin-right: 10px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .videoDetails__comments-nameAndDate-name {
+    font-size: 0.8rem;
+  }
+}
+.videoDetails__comments-nameAndDate-date {
+  color: #AFAFAF;
+  font-size: 0.9rem;
+}
+@media screen and (min-width: 1200px) {
+  .videoDetails__comments-nameAndDate-date {
+    font-size: 0.8rem;
+  }
+}
+.videoDetails__comments-comment {
+  font-family: "Avenir Regular", sans-serif;
+  font-size: 1rem;
+  color: #000000;
+  font-size: 0.9rem;
+}
+@media screen and (min-width: 1200px) {
+  .videoDetails__comments-comment {
+    font-size: 0.8rem;
+    padding-right: 5px;
+  }
+}/*# sourceMappingURL=VideoDetails.css.map */

@@ -4,8 +4,8 @@ import videoDetails from "../../data/video-details.json";
 import VideoDetails from "../VideoDetails/VideoDetails";
 import MainVideo from "../MainVideo/MainVideo";
 import NextVideos from "../NextVideos/NextVideos";
-
-// import "../styles/app.css";
+import NextVideo from "../NextVideo/NextVideo";
+import "./Main.scss";
 
 function Main() {
   const [selectedVideo, setSelectedVideo] = useState(videoDetails[0]);
@@ -26,7 +26,7 @@ function Main() {
   );
 
   return (
-    <div className="Core">
+    <div className="main">
       <MainVideo selectedVideo={selectedVideo} />
       <VideoDetails selectedVideo={selectedVideo} />
       <NextVideos filteredVideos={filteredVideos} clickHandler={videoClick} />
