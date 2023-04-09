@@ -1,0 +1,21 @@
+@import "../../styles/partials/variables";
+@import "../../styles/partials/mixins";
+@import "../../styles/partials/typography";
+
+.next-videos {
+    &__heading {
+        color: $siteprimarysilver;
+        font-weight: 400;
+        font-family: sans-serif;
+        font-size: .875rem;
+
+
+        @include tablet {
+            display: inline-block;
+        }
+
+        @include desktop {
+            font-size: 0.8rem;
+        }
+    }
+}

@@ -28,8 +28,10 @@ function Main() {
   return (
     <div className="main">
       <MainVideo selectedVideo={selectedVideo} />
-      <VideoDetails selectedVideo={selectedVideo} />
-      <NextVideos filteredVideos={filteredVideos} clickHandler={videoClick} />
+      <div className="main__details">
+        <VideoDetails selectedVideo={selectedVideo} />
+        <NextVideos filteredVideos={filteredVideos} clickHandler={videoClick} />
+      </div>
     </div>
   );
 }

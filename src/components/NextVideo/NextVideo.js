@@ -2,19 +2,17 @@ import "./NextVideo.scss";
 
 function NextVideo({ clickHandler, video }) {
   return (
-    <section className="NextVideo">
-      <div onClick={() => clickHandler(video.id)}>
+      <div className="next-video" onClick={() => clickHandler(video.id)}>
         <img
           src={video.image}
           alt="Video-Thumbnail"
-          className="NextVideo__thumbnail"
+          className="next-video__thumbnail"
         />
-        <div className="NextVideo__details">
-          <p className="NextVideo__details-title">{video.title}</p>
-          <p className="NextVideo__details-channel">{video.channel}</p>
+        <div className="next-video__details">
+          <p className="next-video__details-title">{video.title}</p>
+          <p className="next-video__details-channel">{video.channel}</p>
         </div>
       </div>
-    </section>
   );
 }
 

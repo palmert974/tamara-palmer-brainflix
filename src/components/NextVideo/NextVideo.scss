@@ -2,9 +2,10 @@
 @import "../../styles/partials/mixins";
 @import "../../styles/partials/typography";
 
-.NextVideo {
+.next-video {
     display: flex;
-    margin-bottom: 24px;
+    margin-bottom: 1.5rem;
+    flex-direction: row;
 
     @include tablet {
         width: 45%;
@@ -15,28 +16,29 @@
     }
 
     &__thumbnail {
-        width: 120px;
-        height: 70px;
+        width: 7.5rem;
+        max-height: 4.375rem;
         object-fit: cover;
-        border-radius: 5px;
+        border-radius: .3125rem;
 
         @include tablet {
-            height: 80px;
+            height: 5rem;
         }
 
         @include desktop {
-            height: 70px;
-            width: 120px;
+            height: 4.375rem;
+            width: 7.5rem;
         }
     }
 
     &__details {
-        margin-left: 16px;
+        margin-left: 1rem;
 
         &-title {
             margin-top: 0;
             font-family: "Avenir Demi Bold", sans-serif;
             font-size: 0.9rem;
+            font-weight: 600;
         }
 
         &-channel {

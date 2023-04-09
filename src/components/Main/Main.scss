@@ -1,0 +1,13 @@
+@import "../../styles/partials/variables";
+@import "../../styles/partials/mixins";
+@import "../../styles/partials/typography";
+
+.main__details {
+    display: flex;
+    flex-direction: column;
+
+    @include desktop {
+        flex-direction: row;
+        padding-top: 2rem;
+    }
+}

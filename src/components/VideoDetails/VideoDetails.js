@@ -4,7 +4,7 @@ import iconLikes from "../../assets/Images/Icons/likes.svg";
 import profilePicture from "../../assets/Images/Mohan-muruge.jpg";
 import placeHolderPicture from "../../assets/Images/MercrurySquare.png";
 import iconComment from "../../assets/Images/Icons/add_comment.svg";
-// accept selectedPlant
+
 function VideoDetails({ selectedVideo }) {
   const { title, channel, likes, description, comments, views, duration } =
     selectedVideo;
@@ -12,18 +12,18 @@ function VideoDetails({ selectedVideo }) {
   const date = new Date(selectedVideo.timestamp);
 
   return (
-    <section className="videoDetails">
-      <div className="videoDetails__title">
-        <h1 className="videoDetails__videoTitle">{title}</h1>
+    <section className="video-details">
+      <div className="video-details__title">
+        <h1 className="video-details__video-title">{title}</h1>
 
-        <div className="videoDetails__channel">
-          <h3 className="videoDetails__channel-author">By {channel}</h3>
-          <span className="videoDetails__channel-date">
+        <div className="video-details__channel">
+          <h3 className="video-details__channel-author">By {channel}</h3>
+          <span className="video-details__channel-date">
             {date.toLocaleDateString()}
           </span>
         </div>
 
-        <div className="videoDetails__icons">
+        <div className="video-details__icons">
           <img src={iconViews} alt="Views-Icon" />
           <span>{views}</span>
           <img src={iconLikes} alt="Likes-Icon" />
@@ -31,36 +31,36 @@ function VideoDetails({ selectedVideo }) {
         </div>
       </div>
 
-      <hr className="videoDetails__divider"></hr>
+      <hr className="video-details__divider"></hr>
 
-      <div className="videoDetails__summary">
+      <div className="video-details__summary">
         <p>{description}</p>
       </div>
 
-      <div className="videoDetails__conversation">
-        <h2 className="videoDetails__title-conversation">
+      <div className="video-details__conversation">
+        <h2 className="video-details__title-conversation">
           {comments.length} Comments
         </h2>
 
-        <div className="videoDetails__joinConversation">
+        <div className="video-details__joinconversation">
           <form
             action=""
             method=""
-            className="videoDetails__joinConversation-form"
+            className="video-details__joinconversation-form"
           >
-            <div className="videoDetails__joinConversation-row">
-              <div className="videoDetails__joinConversation-picture">
+            <div className="video-details__joinconversation-row">
+              <div className="video-details__joinconversation-picture">
                 <img
-                  className="videoDetails__joinConversation-profilePicture"
+                  className="video-details__joinconversation-profilepicture"
                   src={profilePicture}
                   alt="Profile-Picture"
                 />
               </div>
-              <div className="videoDetails__joinConversation-details">
-                <div className="videoDetails__joinConversation-details-title">
+              <div className="video-details__joinconversation-details">
+                <div className="video-details__joinconversation-details-title">
                   <label
                     htmlFor="comment"
-                    className="videoDetails__joinConversation-heading"
+                    className="video-details__joinconversation-heading"
                   >
                     JOIN THE CONVERSATION
                   </label>
@@ -71,10 +71,10 @@ function VideoDetails({ selectedVideo }) {
                   rows="5"
                   placeholder="Add a new comment"
                 ></textarea>
-                <div className="videoDetails__joinConversation-submit-button">
+                <div className="video-details__joinconversation-submit-button">
                   <button
                     type="submit"
-                    className="videoDetails__joinConversation-submit"
+                    className="video-details__joinconversation-submit"
                   >
                     <img src={iconComment} alt="Play-Button" />
                     COMMENT
@@ -85,23 +85,23 @@ function VideoDetails({ selectedVideo }) {
           </form>
         </div>
 
-        <div className="videoDetails__comments">
+        <div className="video-details__comments">
           {comments.map((comment, i) => {
             return (
-              <div className="videoDetails__comments-card" key={i}>
-                <div className="videoDetails__comments-profilePicture">
+              <div className="video-details__comments-card" key={i}>
+                <div className="video-details__comments-profilepicture">
                   <img src={placeHolderPicture} alt="Profile-Picture" />
                 </div>
-                <div className="videoDetails__comments-details">
-                  <div className="videoDetails__comments-nameAndDate">
-                    <p className="videoDetails__comments-nameAndDate-name">
+                <div className="video-details__comments-details">
+                  <div className="video-details__comments-nameanddate">
+                    <p className="video-details__comments-nameanddate-name">
                       {comment.name}
                     </p>
-                    <p className="videoDetails__comments-nameAndDate-date">
+                    <p className="video-details__comments-nameanddate-date">
                       {new Date(comment.timestamp).toLocaleDateString()}
                     </p>
                   </div>
-                  <p className="videoDetails__comments-comment">
+                  <p className="video-details__comments-comment">
                     {comment.comment}
                   </p>
                 </div>

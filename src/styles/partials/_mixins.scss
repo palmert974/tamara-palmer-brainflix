@@ -22,7 +22,7 @@
     font-family: "Avenir Bold", sans-serif;
     background-color: $siteprimaryblue;
     border: none;
-    border-radius: 5px;
+    border-radius: .3125rem;
     color: $siteprimarywhite;
     height: 100%;
     cursor: pointer;
@@ -40,44 +40,44 @@
 @mixin textarea {
     font-family: "Avenir Regular", sans-serif;
     background-color: $sitesecondaryalabaster;
-    border: 2px solid $sitesecondarymercury;
-    border-radius: 3px;
+    border: 0.125rem solid $sitesecondarymercury;
+    border-radius: .1875rem;
     width: 100%;
     line-height: 2em;
-    padding-left: 10px;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    padding-left: .625rem;
+    margin-top: .625rem;
+    margin-bottom: .625rem;
     box-sizing: border-box;
 }
 
 @mixin heading-1 {
     font-family: "Avenir Bold", sans-serif;
     font-size: 1.8rem;
-    line-height: 32px;
+    line-height: 2rem;
 }
 
 @mixin heading-2 {
     font-family: "Avenir Demi Bold", sans-serif;
     font-size: 1.2rem;
-    line-height: 22px;
+    line-height: 1.375rem;
 }
 
 @mixin heading-3 {
     font-family: "Avenir Demi Bold", sans-serif;
     font-size: 1.1rem;
-    line-height: 18px;
+    line-height: 1.125rem;
 }
 
 @mixin heading-4 {
     font-family: "Avenir Regular", sans-serif;
     font-size: 1.1rem;
-    line-height: 18px;
+    line-height: 1.125rem;
 }
 
 @mixin heading-5 {
     font-family: "Avenir Regular", sans-serif;
     font-size: 0.9rem;
-    line-height: 20px;
+    line-height: 1.25rem;
 }
 
 @mixin paragraph {
