@@ -97,8 +97,8 @@
 
         @include tablet {
             width: 80%;
-            height: 5px;
-            padding-left: 0 0 0 .625rem;
+            height: .3125rem;
+            padding-left: 0 0 0 .625rem
         }
 
         @include desktop {
