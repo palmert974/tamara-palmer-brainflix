@@ -3,6 +3,7 @@ import logo from "../../assets/Images/logo/BrainFlix-logo.svg";
 import profilePicture from "../../assets/Images/Mohan-muruge.jpg";
 import uploadSVG from "../../assets/Images/Icons/upload.svg";
 import "./Header.scss";
+import { Link } from "react-router-dom";
 
 const Header = () => (
   <header className="header">
@@ -16,9 +17,11 @@ const Header = () => (
 );
 
 const Brand = () => (
-  <div className="header__image">
-    <img src={logo} alt="Brand-Logo" className="header__logo" />
-  </div>
+  <Link to="/">
+    <div className="header__image">
+      <img src={logo} alt="Brand-Logo" className="header__logo" />
+    </div>
+  </Link>
 );
 
 const Search = () => (
@@ -32,10 +35,10 @@ const Search = () => (
 );
 
 const UploadButton = () => (
-  <button className="header__button button">
+  <Link to="/upload" className="header__button button">
     <img src={uploadSVG} alt="upload-icon" className="header__upload-icon" />
     UPLOAD
-  </button>
+  </Link>
 );
 
 const ProfilePicture = () => (

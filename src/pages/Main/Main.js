@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import videos from "../../data/videos.json";
 import videoDetails from "../../data/video-details.json";
-import VideoDetails from "../VideoDetails/VideoDetails";
-import MainVideo from "../MainVideo/MainVideo";
-import NextVideos from "../NextVideos/NextVideos";
-import NextVideo from "../NextVideo/NextVideo";
+import VideoDetails from "../../components/VideoDetails/VideoDetails";
+import MainVideo from "../../components/MainVideo/MainVideo";
+import NextVideos from "../../components/NextVideos/NextVideos";
+import NextVideo from "../../components/NextVideo/NextVideo";
 import "./Main.scss";
 
 function Main() {

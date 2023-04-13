@@ -50,6 +50,16 @@
     box-sizing: border-box;
 }
 
+@mixin divider {
+    border: none;
+    background-color: sitesecondarymercury;
+    height: 1px;
+
+    @include desktop {
+        width: 100%;
+    }
+}
+
 @mixin heading-1 {
     font-family: "Avenir Bold", sans-serif;
     font-size: 1.8rem;
