@@ -30,7 +30,10 @@ function Main() {
       <MainVideo selectedVideo={selectedVideo} />
       <div className="main__details">
         <VideoDetails selectedVideo={selectedVideo} />
-        <NextVideos filteredVideos={filteredVideos} clickHandler={videoClick} />
+        <NextVideos
+          filteredVideos={filteredVideos}
+          onClickHandler={videoClick}
+        />
       </div>
     </div>
   );
