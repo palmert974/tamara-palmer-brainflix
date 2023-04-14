@@ -1,0 +1,121 @@
+@import "../../styles/partials/variables";
+@import "../../styles/partials/mixins";
+@import "../../styles/partials/typography";
+
+.upload {
+    margin: 24px 16px 0;
+
+    @include tablet {
+        margin: 24px 20px 0;
+    }
+
+    @include desktop {
+        margin: 0 100px;
+    }
+
+    &__divider {
+        @include divider;
+        margin-bottom: 40px;
+    }
+
+    &__title {
+        @include heading-1;
+
+        @include tablet {
+            padding-bottom: 32px;
+            border-bottom: 0.5px solid $sitesecondarymercury
+        }
+    }
+
+    &__video {
+        display: flex;
+        height: 153px;
+        width: 288px;
+        border-radius: 5px;
+        margin-bottom: 20px;
+        margin-top: 10px;
+
+        @include tablet {
+            width: 344px;
+            height: 183px;
+        }
+    }
+
+    &__videotitle {
+        margin-bottom: 20px;
+        line-height: 40px;
+    }
+
+    &__textarea {
+        margin-bottom: 20px;
+    }
+
+    &__buttons {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 30px;
+
+        @include tablet {
+            flex-direction: row-reverse;
+        }
+
+        @include desktop {
+            border-top: 0.5px solid $sitesecondarymercury;
+            padding-top: 30px;
+        }
+    }
+
+    &__submit {
+        @include button;
+        height: 40px;
+        font-size: 1rem;
+
+        @include tablet {
+            margin-left: 30px;
+            width: 160px;
+        }
+    }
+
+    &__cancel {
+        height: 40px;
+        font-size: 1rem;
+    }
+
+    &__label {
+        font-family: "Avenir Demi Bold";
+        color: $siteprimarysilver;
+
+        @include tablet {
+            font-size: 0.8rem;
+        }
+    }
+
+    &__videocontainer {
+        @include desktop {
+            display: inline-flex;
+            flex-direction: column;
+            width: fit-content;
+            margin-right: 24px;
+        }
+    }
+
+    &__textcontainer {
+        @include desktop {
+            display: inline-flex;
+            flex-direction: column;
+            width: 60%;
+        }
+    }
+
+    @mixin textinput {
+        font-family: "Avenir Regular";
+        background-color: $sitesecondaryalabaster;
+        border: 1px solid $sitesecondarymercury;
+        border-radius: 3px;
+        width: 100%;
+        line-height: 2em;
+        padding-left: 10px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        box-sizing: border-box;
+    }}
