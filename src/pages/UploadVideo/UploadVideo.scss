@@ -42,11 +42,13 @@
     }
 
     &__videotitle {
+        // @include textinput;
         margin-bottom: 20px;
         line-height: 40px;
     }
 
     &__textarea {
+        // @include textinput;
         margin-bottom: 20px;
     }
 
@@ -77,6 +79,7 @@
     }
 
     &__cancel {
+        @include button-reverse;
         height: 40px;
         font-size: 1rem;
     }
@@ -118,4 +121,5 @@
         margin-top: 10px;
         margin-bottom: 10px;
         box-sizing: border-box;
-    }}
+    }
+}
