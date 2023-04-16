@@ -4,12 +4,10 @@ import axios from "axios";
 import VideoDetails from "../../components/VideoDetails/VideoDetails";
 import MainVideo from "../../components/MainVideo/MainVideo";
 import NextVideos from "../../components/NextVideos/NextVideos";
-import NextVideo from "../../components/NextVideo/NextVideo";
 import "./Main.scss";
 
 function Main() {
   const [selectedVideo, setSelectedVideo] = useState({ comments: ["hi"] });
-  const [selectedVideoId, setSelectedVideoId] = useState("");
   const [videosData, setVideosData] = useState([]);
   const { idFromParams } = useParams();
 

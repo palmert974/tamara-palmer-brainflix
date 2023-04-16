@@ -12,8 +12,7 @@ function VideoDetails({ selectedVideo }) {
 
   console.log(selectedVideo);
 
-  const { title, channel, likes, description, comments, views, duration } =
-    selectedVideo;
+  const { title, channel, likes, description, comments, views } = selectedVideo;
 
   const date = new Date(selectedVideo.timestamp);
 

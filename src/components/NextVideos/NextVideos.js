@@ -1,7 +1,7 @@
 import NextVideo from "../NextVideo/NextVideo";
 import "./NextVideos.scss";
 
-function NextVideos({ onClickHandler, filteredVideos }) {
+function NextVideos({ filteredVideos }) {
   return (
     <nav className="next-videos">
       <p className="next-videos__heading">NEXT VIDEOS</p>

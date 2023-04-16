@@ -1,6 +1,3 @@
-import playButton from "../../assets/Images/Icons/play.svg";
-import fullScreenButton from "../../assets/Images/Icons/fullscreen.svg";
-import volumeButton from "../../assets/Images/Icons/volume_off.svg";
 import "./MainVideo.scss";
 
 function MainVideo({ selectedVideo }) {
@@ -13,7 +10,6 @@ function MainVideo({ selectedVideo }) {
         poster={image}
         controls
       />
-     
     </div>
   );
 }

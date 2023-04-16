@@ -1,7 +1,7 @@
 import "./NextVideo.scss";
 import { Link } from "react-router-dom";
 
-function NextVideo({ onClickHandler, video }) {
+function NextVideo({ video }) {
   return (
     <div>
       <Link className="next-video" to={`/${video.id}`}>
