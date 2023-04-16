@@ -72,6 +72,11 @@
         height: 2.5rem;
         font-size: 1rem;
         width: 100%;
+        display: flex;
+        align-content: stretch;
+        align-items: flex-start;
+        flex-direction: column-reverse;
+        flex-wrap: wrap;
 
         @include tablet {
             margin-left: 1.875rem;

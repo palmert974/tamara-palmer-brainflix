@@ -1,5 +1,6 @@
 import "./UploadVideo.scss";
 import videoThumbnail from "../../assets/Images/logo/Upload-video-preview.jpg";
+import publishSVG from "../../assets/Images/Icons/publish.svg";
 import { Link } from "react-router-dom";
 
 function UploadVideo() {
@@ -55,6 +56,11 @@ function UploadVideo() {
                 className="upload__submit"
                 onClick={onClickHandler}
               >
+                <img
+                  src={publishSVG}
+                  alt="upload-icon"
+                  className="upload-icon"
+                ></img>
                 PUBLISH
               </button>
             </Link>
