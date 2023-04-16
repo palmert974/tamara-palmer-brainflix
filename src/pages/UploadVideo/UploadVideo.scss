@@ -3,89 +3,90 @@
 @import "../../styles/partials/typography";
 
 .upload {
-    margin: 24px 16px 0;
+    margin: 1.5rem 1rem 0;
 
     @include tablet {
-        margin: 24px 20px 0;
+        margin: 1.5rem 1.25rem 0;
     }
 
     @include desktop {
-        margin: 0 100px;
+        margin: 0 6.25rem;
     }
 
     &__divider {
         @include divider;
-        margin-bottom: 40px;
+        margin-bottom: 2.5rem;
     }
 
     &__title {
         @include heading-1;
 
         @include tablet {
-            padding-bottom: 32px;
-            border-bottom: 0.5px solid $sitesecondarymercury
+            padding-bottom: 2rem;
+            border-bottom: .0313rem solid $sitesecondarymercury
         }
     }
 
     &__video {
         display: flex;
-        height: 153px;
-        width: 288px;
-        border-radius: 5px;
-        margin-bottom: 20px;
-        margin-top: 10px;
+        height: 9.5625rem;
+        width: 18rem;
+        border-radius: .3125rem;
+        margin-bottom: 1.25rem;
+        margin-top: .625rem;
 
         @include tablet {
-            width: 344px;
-            height: 183px;
+            width: 21.5rem;
+            height: 11.4375rem;
         }
     }
 
     &__videotitle {
-        // @include textinput;
-        margin-bottom: 20px;
-        line-height: 40px;
+        @include textarea;
+        margin-bottom: 1.25rem;
+        line-height: 2.5rem;
     }
 
     &__textarea {
-        // @include textinput;
-        margin-bottom: 20px;
+        @include textarea;
+        margin-bottom: 1.25rem;
     }
 
     &__buttons {
         display: flex;
         flex-direction: column;
-        margin-bottom: 30px;
+        margin-bottom: 1.875rem;
 
         @include tablet {
             flex-direction: row-reverse;
         }
 
         @include desktop {
-            border-top: 0.5px solid $sitesecondarymercury;
-            padding-top: 30px;
+            border-top: .0313rem solid $sitesecondarymercury;
+            padding-top: 1.875rem;
         }
     }
 
     &__submit {
         @include button;
-        height: 40px;
+        height: 2.5rem;
         font-size: 1rem;
+        width: 100%;
 
         @include tablet {
-            margin-left: 30px;
-            width: 160px;
+            margin-left: 1.875rem;
+            width: 10rem;
         }
     }
 
     &__cancel {
         @include button-reverse;
-        height: 40px;
+        height: 2.5rem;
         font-size: 1rem;
     }
 
     &__label {
-        font-family: "Avenir Demi Bold";
+        font-family: "Avenir Demi Bold", sans-serif;
         color: $siteprimarysilver;
 
         @include tablet {
@@ -98,7 +99,7 @@
             display: inline-flex;
             flex-direction: column;
             width: fit-content;
-            margin-right: 24px;
+            margin-right: 1.5rem;
         }
     }
 
@@ -111,15 +112,15 @@
     }
 
     @mixin textinput {
-        font-family: "Avenir Regular";
+        font-family: "Avenir Regular", sans-serif;
         background-color: $sitesecondaryalabaster;
-        border: 1px solid $sitesecondarymercury;
-        border-radius: 3px;
+        border: .0625rem solid $sitesecondarymercury;
+        border-radius: .1875rem;
         width: 100%;
         line-height: 2em;
-        padding-left: 10px;
-        margin-top: 10px;
-        margin-bottom: 10px;
+        padding-left: .625rem;
+        margin-top: .625rem;
+        margin-bottom: .625rem;
         box-sizing: border-box;
     }
 }

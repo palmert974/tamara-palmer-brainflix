@@ -1,7 +1,12 @@
 import "./UploadVideo.scss";
 import videoThumbnail from "../../assets/Images/logo/Upload-video-preview.jpg";
+import { Link } from "react-router-dom";
 
 function UploadVideo() {
+  const onClickHandler = () => {
+    alert("Video uploaded!");
+  };
+
   return (
     <>
       <hr className="upload__divider"></hr>
@@ -44,9 +49,15 @@ function UploadVideo() {
           </div>
 
           <div className="upload__buttons">
-            <button type="submit" className="upload__submit">
-              PUBLISH
-            </button>
+            <Link to="/">
+              <button
+                type="submit"
+                className="upload__submit"
+                onClick={onClickHandler}
+              >
+                PUBLISH
+              </button>
+            </Link>
             <button type="submit" className="upload__cancel">
               CANCEL
             </button>
