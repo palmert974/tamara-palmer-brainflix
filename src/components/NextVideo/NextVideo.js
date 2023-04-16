@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 
 function NextVideo({ onClickHandler, video }) {
   return (
-    <div className="next-video">
-      <Link className="nav__link" to={`/${video.id}`}>
+    <div>
+      <Link className="next-video" to={`/${video.id}`}>
         <img
           src={video.image}
           alt="Video-Thumbnail"

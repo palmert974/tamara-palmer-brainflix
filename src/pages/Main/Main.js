@@ -8,7 +8,7 @@ import NextVideo from "../../components/NextVideo/NextVideo";
 import "./Main.scss";
 
 function Main() {
-  const [selectedVideo, setSelectedVideo] = useState([]);
+  const [selectedVideo, setSelectedVideo] = useState({ comments: ["hi"] });
   const [selectedVideoId, setSelectedVideoId] = useState("");
   const [videosData, setVideosData] = useState([]);
   const { idFromParams } = useParams();
@@ -53,12 +53,20 @@ function Main() {
     (video) => video.id !== videoIdToDisplay.id
   );
   console.log(filteredVideos);
+  console.log(selectedVideo);
+
+  let videoDetails;
+
+  if (selectedVideo.comments.length > 0) {
+    videoDetails = <VideoDetails selectedVideo={selectedVideo} />;
+    console.log(selectedVideo);
+  }
 
   return (
     <div className="main">
       <MainVideo selectedVideo={selectedVideo} />
       <div className="main__details">
-        {/* <VideoDetails selectedVideo={selectedVideo} /> */}
+        {videoDetails}
         <NextVideos filteredVideos={filteredVideos} />
       </div>
     </div>

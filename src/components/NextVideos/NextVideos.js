@@ -5,7 +5,6 @@ function NextVideos({ onClickHandler, filteredVideos }) {
   return (
     <nav className="next-videos">
       <p className="next-videos__heading">NEXT VIDEOS</p>
-      {/* map plant array to nav item: pass in plant object and clickhandler */}
       {filteredVideos.map((video) => (
         <NextVideo key={video.id} video={video} />
       ))}
