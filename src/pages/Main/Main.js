@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import videos from "../../data/videos.json";
-import videoDetails from "../../data/video-details.json";
 import VideoDetails from "../../components/VideoDetails/VideoDetails";
 import MainVideo from "../../components/MainVideo/MainVideo";
 import NextVideos from "../../components/NextVideos/NextVideos";
@@ -10,23 +8,29 @@ import NextVideo from "../../components/NextVideo/NextVideo";
 import "./Main.scss";
 
 function Main() {
-  const [selectedVideo, setSelectedVideo] = useState(videoDetails[0]);
+  const [selectedVideo, setSelectedVideo] = useState([]);
+  const [selectedVideoId, setSelectedVideoId] = useState("");
   const [videosData, setVideosData] = useState([]);
   const { idFromParams } = useParams();
 
   const apiKey = "?api_key=9dc66532-85bb-4503-97b9-99f84eeabec3";
   const baseUrl = "https://project-2-api.herokuapp.com/videos";
 
-  let defaultPlantId = null;
+  let defaultVideoId = null;
 
   if (videosData.length > 0) {
-    defaultPlantId = videosData[0].id;
+    if (idFromParams === undefined) {
+      defaultVideoId = videosData[0].id;
+    } else {
+      defaultVideoId = idFromParams;
+    }
 
-    console.log(defaultPlantId);
+    console.log(defaultVideoId);
+    console.log(idFromParams);
   }
 
   // `||` evaluates to the first expression if it exists, or it uses the second
-  let plantIdToDisplay = idFromParams || defaultPlantId;
+  let videoIdToDisplay = idFromParams || defaultVideoId;
 
   useEffect(() => {
     axios.get(baseUrl + apiKey).then((response) => {
@@ -35,21 +39,18 @@ function Main() {
     });
   }, []);
 
-  // const filteredPlants = plants.filter(plant => plant.id !== plantIdToDisplay)
+  useEffect(() => {
+    if (defaultVideoId === null) {
+      return;
+    }
+    axios.get(baseUrl + "/" + defaultVideoId + apiKey).then((response) => {
+      console.log(response.data);
+      setSelectedVideo(response.data);
+    });
+  }, [defaultVideoId]);
 
-  // create plantClick function - takes plant id
-  // Function to call when a nav button is clicked
-  const videoClick = (videoId) => {
-    //  finds the plantDetailsData object with that id
-    //  and sets selectedPlant to that object
-    const foundVideo = videoDetails.find((video) => video.id === videoId);
-    setSelectedVideo(foundVideo);
-  };
-
-  // create filteredPlants by filtering the current selected plant out of the array
-  // filteredPlants is passed to Nav
   const filteredVideos = videosData.filter(
-    (video) => video.id !== defaultPlantId.id
+    (video) => video.id !== videoIdToDisplay.id
   );
   console.log(filteredVideos);
 
@@ -57,11 +58,8 @@ function Main() {
     <div className="main">
       <MainVideo selectedVideo={selectedVideo} />
       <div className="main__details">
-        <VideoDetails selectedVideo={selectedVideo} />
-        <NextVideos
-          filteredVideos={filteredVideos}
-          onClickHandler={videoClick}
-        />
+        {/* <VideoDetails selectedVideo={selectedVideo} /> */}
+        <NextVideos filteredVideos={filteredVideos} />
       </div>
     </div>
   );

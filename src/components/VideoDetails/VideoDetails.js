@@ -6,6 +6,12 @@ import placeHolderPicture from "../../assets/Images/MercrurySquare.png";
 import iconComment from "../../assets/Images/Icons/add_comment.svg";
 
 function VideoDetails({ selectedVideo }) {
+  if (selectedVideo === null) {
+    return <></>;
+  }
+
+  console.log(selectedVideo);
+
   const { title, channel, likes, description, comments, views, duration } =
     selectedVideo;
 
