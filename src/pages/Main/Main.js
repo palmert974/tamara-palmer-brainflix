@@ -12,7 +12,9 @@ function Main() {
   const { idFromParams } = useParams();
 
   const apiKey = "?api_key=9dc66532-85bb-4503-97b9-99f84eeabec3";
-  const baseUrl = "https://project-2-api.herokuapp.com/videos";
+  const baseUrl = process.env.REACT_APP_BASE_URL + "/videos";
+
+  // "https://project-2-api.herokuapp.com/videos";
 
   let defaultVideoId = null;
 
@@ -29,9 +31,10 @@ function Main() {
 
   // `||` evaluates to the first expression if it exists, or it uses the second
   let videoIdToDisplay = idFromParams || defaultVideoId;
+  console.log(baseUrl);
 
   useEffect(() => {
-    axios.get(baseUrl + apiKey).then((response) => {
+    axios.get(baseUrl).then((response) => {
       console.log(response.data);
       setVideosData(response.data);
     });
@@ -41,7 +44,7 @@ function Main() {
     if (defaultVideoId === null) {
       return;
     }
-    axios.get(baseUrl + "/" + defaultVideoId + apiKey).then((response) => {
+    axios.get(baseUrl + "/" + defaultVideoId).then((response) => {
       console.log(response.data);
       setSelectedVideo(response.data);
     });
@@ -55,10 +58,10 @@ function Main() {
 
   let videoDetails;
 
-  if (selectedVideo.comments.length > 0) {
-    videoDetails = <VideoDetails selectedVideo={selectedVideo} />;
-    console.log(selectedVideo);
-  }
+  // if (selectedVideo.comments.length > 0) {
+  videoDetails = <VideoDetails selectedVideo={selectedVideo} />;
+  console.log(selectedVideo);
+  // }
 
   return (
     <div className="main">
