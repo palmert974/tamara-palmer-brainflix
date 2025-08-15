@@ -16,6 +16,7 @@ function App() {
         <Route path="/" element={<Main />} />
         <Route path="upload" element={<UploadVideo />} />
         <Route path="/:idFromParams" element={<Main />}></Route>
+  
       </Routes>
     </div>
   );
