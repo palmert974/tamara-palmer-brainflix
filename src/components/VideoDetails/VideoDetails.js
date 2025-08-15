@@ -5,16 +5,24 @@ import profilePicture from "../../assets/Images/Mohan-muruge.jpg";
 import placeHolderPicture from "../../assets/Images/MercrurySquare.png";
 import iconComment from "../../assets/Images/Icons/add_comment.svg";
 
+function formatDate(ts) {
+  try {
+    return new Date(ts).toLocaleString(undefined, {
+      year: "numeric",
+      month: "short",
+      day: "2-digit",
+    });
+  } catch (e) {
+    return "";
+  }
+}
+
 function VideoDetails({ selectedVideo }) {
-  if (selectedVideo === null) {
+  if (!selectedVideo) {
     return <></>;
   }
 
-  console.log(selectedVideo);
-
-  const { title, channel, likes, description, comments, views } = selectedVideo;
-
-  const date = new Date(selectedVideo.timestamp);
+  const { title, channel, likes, description, comments = [], views, timestamp } = selectedVideo;
 
   return (
     <section className="video-details">
@@ -23,15 +31,15 @@ function VideoDetails({ selectedVideo }) {
 
         <div className="video-details__channel">
           <h3 className="video-details__channel-author">By {channel}</h3>
-          <span className="video-details__channel-date">
-            {date.toLocaleDateString()}
+          <span className="video-details__channel-date" aria-label={`Uploaded ${formatDate(timestamp)}`}>
+            {formatDate(timestamp)}
           </span>
         </div>
 
-        <div className="video-details__icons">
-          <img src={iconViews} alt="Views-Icon" />
+        <div className="video-details__icons" aria-label="Video stats">
+          <img src={iconViews} alt="Views" />
           <span>{views}</span>
-          <img src={iconLikes} alt="Likes-Icon" />
+          <img src={iconLikes} alt="Likes" />
           <span>{likes}</span>
         </div>
       </div>
@@ -49,16 +57,16 @@ function VideoDetails({ selectedVideo }) {
 
         <div className="video-details__joinconversation">
           <form
-            action=""
-            method=""
             className="video-details__joinconversation-form"
+            onSubmit={(e) => e.preventDefault()}
+            aria-label="Add a comment"
           >
             <div className="video-details__joinconversation-row">
               <div className="video-details__joinconversation-picture">
                 <img
                   className="video-details__joinconversation-profilepicture"
                   src={profilePicture}
-                  alt="Profile-Picture"
+                  alt="Your profile"
                 />
               </div>
               <div className="video-details__joinconversation-details">
@@ -71,17 +79,20 @@ function VideoDetails({ selectedVideo }) {
                   </label>
                 </div>
                 <textarea
+                  id="comment"
                   name="comment"
                   cols="30"
                   rows="5"
                   placeholder="Add a new comment"
+                  aria-label="Add a new comment"
                 ></textarea>
                 <div className="video-details__joinconversation-submit-button">
                   <button
                     type="submit"
                     className="video-details__joinconversation-submit"
+                    aria-label="Submit comment"
                   >
-                    <img src={iconComment} alt="Play-Button" />
+                    <img src={iconComment} alt="Add comment" />
                     COMMENT
                   </button>
                 </div>
@@ -95,7 +106,7 @@ function VideoDetails({ selectedVideo }) {
             return (
               <div className="video-details__comments-card" key={i}>
                 <div className="video-details__comments-profilepicture">
-                  <img src={placeHolderPicture} alt="Profile-Picture" />
+                  <img src={placeHolderPicture} alt="Profile" />
                 </div>
                 <div className="video-details__comments-details">
                   <div className="video-details__comments-nameanddate">
@@ -103,7 +114,7 @@ function VideoDetails({ selectedVideo }) {
                       {comment.name}
                     </p>
                     <p className="video-details__comments-nameanddate-date">
-                      {new Date(comment.timestamp).toLocaleDateString()}
+                      {formatDate(comment.timestamp)}
                     </p>
                   </div>
                   <p className="video-details__comments-comment">

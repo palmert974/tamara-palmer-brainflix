@@ -1,13 +1,14 @@
 import "./NextVideo.scss";
 import { Link } from "react-router-dom";
 
-function NextVideo({ video }) {
+function NextVideo({ video, active }) {
+  const className = `next-video${active ? " next-video--active" : ""}`;
   return (
     <div>
-      <Link className="next-video" to={`/${video.id}`}>
+      <Link className={className} to={`/${video.id}`} aria-current={active ? "true" : undefined}>
         <img
           src={video.image}
-          alt="Video-Thumbnail"
+          alt={`Thumbnail for ${video.title}`}
           className="next-video__thumbnail"
         />
         <div className="next-video__details">

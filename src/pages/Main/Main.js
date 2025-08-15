@@ -7,68 +7,44 @@ import NextVideos from "../../components/NextVideos/NextVideos";
 import "./Main.scss";
 
 function Main() {
-  const [selectedVideo, setSelectedVideo] = useState({ comments: ["hi"] });
+  const [selectedVideo, setSelectedVideo] = useState({ comments: [] });
   const [videosData, setVideosData] = useState([]);
   const { idFromParams } = useParams();
 
-  const apiKey = "?api_key=9dc66532-85bb-4503-97b9-99f84eeabec3";
   const baseUrl = process.env.REACT_APP_BASE_URL + "/videos";
-
-  // "https://project-2-api.herokuapp.com/videos";
 
   let defaultVideoId = null;
 
   if (videosData.length > 0) {
-    if (idFromParams === undefined) {
-      defaultVideoId = videosData[0].id;
-    } else {
-      defaultVideoId = idFromParams;
-    }
-
-    console.log(defaultVideoId);
-    console.log(idFromParams);
+    defaultVideoId = idFromParams === undefined ? videosData[0].id : idFromParams;
   }
 
   // `||` evaluates to the first expression if it exists, or it uses the second
   let videoIdToDisplay = idFromParams || defaultVideoId;
-  console.log(baseUrl);
 
   useEffect(() => {
     axios.get(baseUrl).then((response) => {
-      console.log(response.data);
       setVideosData(response.data);
     });
-  }, []);
+  }, [baseUrl]);
 
   useEffect(() => {
-    if (defaultVideoId === null) {
-      return;
-    }
-    axios.get(baseUrl + "/" + defaultVideoId).then((response) => {
-      console.log(response.data);
+    if (!defaultVideoId) return;
+    axios.get(`${baseUrl}/${defaultVideoId}`).then((response) => {
       setSelectedVideo(response.data);
     });
-  }, [defaultVideoId]);
+  }, [baseUrl, defaultVideoId]);
 
-  const filteredVideos = videosData.filter(
-    (video) => video.id !== videoIdToDisplay.id
-  );
-  console.log(filteredVideos);
-  console.log(selectedVideo);
+  const filteredVideos = videosData.filter((video) => video.id !== videoIdToDisplay);
 
-  let videoDetails;
-
-  // if (selectedVideo.comments.length > 0) {
-  videoDetails = <VideoDetails selectedVideo={selectedVideo} />;
-  console.log(selectedVideo);
-  // }
+  const videoDetails = <VideoDetails selectedVideo={selectedVideo} />;
 
   return (
     <div className="main">
       <MainVideo selectedVideo={selectedVideo} />
       <div className="main__details">
         {videoDetails}
-        <NextVideos filteredVideos={filteredVideos} />
+        <NextVideos filteredVideos={filteredVideos} activeId={videoIdToDisplay} />
       </div>
     </div>
   );

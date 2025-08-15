@@ -7,7 +7,11 @@
     margin-bottom: 1.5rem;
     flex-direction: row;
     text-decoration: none;
+    border-radius: .3125rem;
+    transition: background-color .15s ease, transform .1s ease;
 
+    &:hover { background-color: $sitesecondarymercury; }
+    &--active { background-color: rgba(0,0,0,0.06); outline: 2px solid $sitesecondarymercury; }
 
     @include tablet {
         width: 45%;
